@@ -119,10 +119,10 @@ class SegmentConditionModel
                 $condition = $traitValue !== $castedValue;
                 break;
             case (SegmentConditions::CONTAINS):
-                $condition = strpos($traitValue, (string) $castedValue) !== false;
+                $condition = strpos($traitValue, (string) $this->value) !== false;
                 break;
             case (SegmentConditions::NOT_CONTAINS):
-                $condition = strpos($traitValue, (string) $castedValue) === false;
+                $condition = strpos($traitValue, (string) $this->value) === false;
                 break;
             case (SegmentConditions::REGEX):
                 $matchesCount = preg_match_all("/{$this->value}/", (string) $traitValue);
